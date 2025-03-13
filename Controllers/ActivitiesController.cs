@@ -26,7 +26,7 @@ public class ActivitiesController : ControllerBase
         {
             Name = data.Name,
             When = data.When,
-            UserId = data.UserId
+            UserId = User.Identity.Name
         });
         db.SaveChanges();
 
@@ -36,7 +36,7 @@ public class ActivitiesController : ControllerBase
     // GET /Activities get all activities by user
     [HttpGet]
     [Authorize(Roles = "user")]
-    
+
     public IActionResult Get()
     {
         var db = new ToDoDbContext();
@@ -50,6 +50,8 @@ public class ActivitiesController : ControllerBase
 
     // GET /Activities/{id} get an activity by id 
     [HttpGet("{id}")]
+    [Authorize(Roles = "user")]
+
     public IActionResult Get(int id)
     {
         var db = new ToDoDbContext();
@@ -67,6 +69,8 @@ public class ActivitiesController : ControllerBase
 
     // PUT /Activities/{id} update an activity by id
     [HttpPut("{id}")]
+    [Authorize(Roles = "user")]
+
     public IActionResult Put(int id, [FromBody] DTOs.Activity data)
     {
         var db = new ToDoDbContext();
@@ -88,6 +92,8 @@ public class ActivitiesController : ControllerBase
 
     // DELETE /Activities/{id} delete an activity by id
     [HttpDelete("{id}")]
+    [Authorize(Roles = "user")]
+
     public IActionResult Delete(int id)
     {
         var db = new ToDoDbContext();
