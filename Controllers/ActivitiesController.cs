@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToDo.Models;
 
@@ -16,6 +17,7 @@ public class ActivitiesController : ControllerBase
 
     // POST /Activities create a new activity
     [HttpPost]
+    [Authorize(Roles = "user")]
     public IActionResult Post([FromBody] DTOs.Activity data)
     {
         var db = new ToDoDbContext();
@@ -32,6 +34,8 @@ public class ActivitiesController : ControllerBase
 
     // GET /Activities get all activities
     [HttpGet]
+    [Authorize(Roles = "user")]
+
     public IActionResult Get()
     {
         var db = new ToDoDbContext();

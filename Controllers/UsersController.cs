@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using ToDo.Models;
 using ToDo.DTOs;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ToDo.Controllers;
 
@@ -59,6 +60,7 @@ public class UsersController : ControllerBase
 
     // GET Myself get the current user by token
     [HttpGet]
+    [Authorize(Roles = "user")]
     public IActionResult Get()
     {
         var db = new ToDoDbContext();
