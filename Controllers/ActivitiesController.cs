@@ -26,7 +26,7 @@ public class ActivitiesController : ControllerBase
         {
             Name = data.Name,
             When = data.When,
-            UserId = User.Identity.Name
+            UserId = Convert.ToInt32(User.Identity.Name)
         });
         db.SaveChanges();
 
@@ -42,7 +42,7 @@ public class ActivitiesController : ControllerBase
         var db = new ToDoDbContext();
 
         var activities = from x in db.Activity
-                         where x.UserId == User.Identity.Name
+                         where x.UserId == Convert.ToInt32(User.Identity.Name)
                          select x;
 
         return Ok(activities);

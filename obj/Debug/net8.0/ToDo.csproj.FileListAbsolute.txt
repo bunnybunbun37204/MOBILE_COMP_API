@@ -1,3 +1,11 @@
+/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.csproj.AssemblyReference.cache
+/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.GeneratedMSBuildEditorConfig.editorconfig
+/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.AssemblyInfoInputs.cache
+/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.AssemblyInfo.cs
+/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.csproj.CoreCompileInputs.cache
+/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.MvcApplicationPartsAssemblyInfo.cs
+/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.MvcApplicationPartsAssemblyInfo.cache
+/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.sourcelink.json
 /home/bunyawat/Documents/my-dev/TA/ToDo/bin/Debug/net8.0/appsettings.Development.json
 /home/bunyawat/Documents/my-dev/TA/ToDo/bin/Debug/net8.0/appsettings.json
 /home/bunyawat/Documents/my-dev/TA/ToDo/bin/Debug/net8.0/ToDo.staticwebassets.endpoints.json
@@ -26,14 +34,6 @@
 /home/bunyawat/Documents/my-dev/TA/ToDo/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/bunyawat/Documents/my-dev/TA/ToDo/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /home/bunyawat/Documents/my-dev/TA/ToDo/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
-/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.csproj.AssemblyReference.cache
-/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.GeneratedMSBuildEditorConfig.editorconfig
-/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.AssemblyInfoInputs.cache
-/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.AssemblyInfo.cs
-/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.csproj.CoreCompileInputs.cache
-/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.MvcApplicationPartsAssemblyInfo.cs
-/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.MvcApplicationPartsAssemblyInfo.cache
-/home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/ToDo.sourcelink.json
 /home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/scopedcss/bundle/ToDo.styles.css
 /home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/staticwebassets.build.json
 /home/bunyawat/Documents/my-dev/TA/ToDo/obj/Debug/net8.0/staticwebassets.development.json

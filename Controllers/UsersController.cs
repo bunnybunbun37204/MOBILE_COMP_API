@@ -20,12 +20,12 @@ public class UsersController : ControllerBase
 
     // POST /Users register a new user
     [HttpPost]
-    public IActionResult Post([FromBody] Login data)
+    public IActionResult Post([FromBody] Register data)
     {
         var db = new ToDoDbContext();
 
         var user = (from x in db.User
-                    where x.Id == data.NationalId
+                    where x.Nationalid == data.NationalId
                     select x).FirstOrDefault();
         if (user != null)
         {
@@ -48,13 +48,16 @@ public class UsersController : ControllerBase
 
         db.User.Add(new User
         {
-            Id = data.NationalId,
+            Nationalid = data.NationalId,
+            Title = data.Title,
             Password = hash,
+            Firstname = data.FirstName,
+            Lastname = data.LastName,
             Salt = Convert.ToBase64String(s)
         });
         db.SaveChanges();
 
-        return Ok();
+        return Created();
 
     }
 
@@ -66,7 +69,7 @@ public class UsersController : ControllerBase
         var db = new ToDoDbContext();
 
         var user = (from x in db.User
-                    where x.Id == User.Identity.Name
+                    where x.Id == Convert.ToInt32(User.Identity.Name)
                     select x).FirstOrDefault();
         if (user == null)
         {
@@ -75,7 +78,10 @@ public class UsersController : ControllerBase
 
         return Ok(new
         {
-            NationalId = user.Id
+            NationalId = user.Id,
+            FirstName = user.Firstname,
+            LastName = user.Lastname,
+            Title = user.Title
         });
     }
 

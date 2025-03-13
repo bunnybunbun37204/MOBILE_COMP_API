@@ -5,15 +5,12 @@ namespace ToDo.Models
 {
     public partial class User
     {
-        public User()
-        {
-            Activity = new HashSet<Activity>();
-        }
-
-        public string Id { get; set; } = null!;
+        public int Id { get; set; }
         public string? Password { get; set; }
         public string? Salt { get; set; }
-
-        public virtual ICollection<Activity> Activity { get; set; }
+        public string Nationalid { get; set; } = null!;
+        public string? Firstname { get; set; }
+        public string Title { get; set; } = null!;
+        public string Lastname { get; set; } = null!;
     }
 }

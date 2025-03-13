@@ -26,7 +26,7 @@ public class TokensController : ControllerBase
         var db = new ToDoDbContext();
 
         var user = (from x in db.User
-                    where x.Id == data.NationalId
+                    where x.Nationalid == data.NationalId
                     select x).FirstOrDefault();
         if (user == null || user.Salt == null)
         {
@@ -50,7 +50,7 @@ public class TokensController : ControllerBase
         var desc = new SecurityTokenDescriptor();
         desc.Subject = new ClaimsIdentity(new Claim[]
         {
-            new Claim(ClaimTypes.Name, user.Id),
+            new Claim(ClaimTypes.Name, Convert.ToString(user.Id)),
             new Claim(ClaimTypes.Role, "user")
         });
         desc.NotBefore = DateTime.UtcNow;

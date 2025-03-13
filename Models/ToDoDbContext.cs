@@ -35,29 +35,36 @@ namespace ToDo.Models
 
             modelBuilder.Entity<Activity>(entity =>
             {
-                entity.HasIndex(e => e.UserId, "FK_Activity_UserId");
-
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id");
 
-                entity.Property(e => e.Name).HasMaxLength(50);
+                entity.Property(e => e.Name).HasMaxLength(100);
 
-                entity.Property(e => e.UserId).HasMaxLength(13);
+                entity.Property(e => e.UserId).HasColumnType("int(11)");
 
-                entity.Property(e => e.When).HasColumnType("datetime");
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.Activity)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK_Activity_UserId");
+                entity.Property(e => e.When)
+                    .HasColumnType("datetime")
+                    .HasColumnName("when");
             });
 
             modelBuilder.Entity<User>(entity =>
             {
                 entity.Property(e => e.Id)
-                    .HasMaxLength(13)
+                    .HasColumnType("int(11)")
                     .HasColumnName("id");
+
+                entity.Property(e => e.Firstname)
+                    .HasMaxLength(250)
+                    .HasColumnName("firstname");
+
+                entity.Property(e => e.Lastname)
+                    .HasMaxLength(250)
+                    .HasColumnName("lastname");
+
+                entity.Property(e => e.Nationalid)
+                    .HasMaxLength(13)
+                    .HasColumnName("nationalid");
 
                 entity.Property(e => e.Password)
                     .HasMaxLength(44)
@@ -66,6 +73,10 @@ namespace ToDo.Models
                 entity.Property(e => e.Salt)
                     .HasMaxLength(24)
                     .HasColumnName("salt");
+
+                entity.Property(e => e.Title)
+                    .HasMaxLength(250)
+                    .HasColumnName("title");
             });
 
             OnModelCreatingPartial(modelBuilder);
