@@ -25,25 +25,30 @@ public class ActivitiesController : ControllerBase
         db.Activity.Add(new Models.Activity
         {
             Name = data.Name,
-            When = data.When
+            When = data.When,
+            UserId = data.UserId
         });
         db.SaveChanges();
 
         return Ok();
     }
 
-    // GET /Activities get all activities
+    // GET /Activities get all activities by user
     [HttpGet]
     [Authorize(Roles = "user")]
-
+    
     public IActionResult Get()
     {
         var db = new ToDoDbContext();
 
-        return Ok(from x in db.Activity select x);
+        var activities = from x in db.Activity
+                         where x.UserId == User.Identity.Name
+                         select x;
+
+        return Ok(activities);
     }
 
-    // GET /Activities/{id} get an activity by id
+    // GET /Activities/{id} get an activity by id 
     [HttpGet("{id}")]
     public IActionResult Get(int id)
     {

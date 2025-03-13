@@ -35,13 +35,22 @@ namespace ToDo.Models
 
             modelBuilder.Entity<Activity>(entity =>
             {
+                entity.HasIndex(e => e.UserId, "FK_Activity_UserId");
+
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id");
 
                 entity.Property(e => e.Name).HasMaxLength(50);
 
+                entity.Property(e => e.UserId).HasMaxLength(13);
+
                 entity.Property(e => e.When).HasColumnType("datetime");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Activity)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK_Activity_UserId");
             });
 
             modelBuilder.Entity<User>(entity =>
