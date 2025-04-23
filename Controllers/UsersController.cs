@@ -57,7 +57,7 @@ public class UsersController : ControllerBase
         });
         db.SaveChanges();
 
-        return Created();
+        return Ok();
 
     }
 

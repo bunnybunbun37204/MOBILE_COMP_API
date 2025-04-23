@@ -21,16 +21,17 @@ public class ActivitiesController : ControllerBase
     public IActionResult Post([FromBody] DTOs.Activity data)
     {
         var db = new ToDoDbContext();
-
-        db.Activity.Add(new Models.Activity
+        var activities = new Models.Activity
         {
             Name = data.Name,
             When = data.When,
             UserId = Convert.ToInt32(User.Identity.Name)
-        });
+        };
+
+        db.Activity.Add(activities);
         db.SaveChanges();
 
-        return Ok();
+        return Ok(activities);
     }
 
     // GET /Activities get all activities by user
