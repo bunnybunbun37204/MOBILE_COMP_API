@@ -54,7 +54,7 @@ public class TokensController : ControllerBase
             new Claim(ClaimTypes.Role, "user")
         });
         desc.NotBefore = DateTime.UtcNow;
-        desc.Expires = DateTime.UtcNow.AddHours(3);
+        desc.Expires = DateTime.UtcNow.AddMinutes(1);
         desc.IssuedAt = DateTime.UtcNow;
         desc.Issuer = "ToDo";
         desc.Audience = "ToDo";
